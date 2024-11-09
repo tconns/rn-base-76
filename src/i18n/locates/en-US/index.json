@@ -1,0 +1,73 @@
+{
+  "screen": {
+    "splash": {
+      "title": "Splash"
+    },
+    "detail": {
+      "tabInfo": {
+        "title": "Detail",
+        "labelView": "Views",
+        "labelChapter": "Chapters",
+        "labelGenre": "Genres",
+        "labelSummary": "Summary",
+        "noSummary": "Updating...",
+        "labelReadMore": "Read More",
+        "labelReadLess": "Read Less"
+      },
+      "tabChapter": {
+        "title": "Chapter"
+      },
+      "footerView": {
+        "btnContinueReading": "Continue reading",
+        "btnStartReading": "Read from beginning"
+      }
+    },
+    "search": {
+      "txtPlaceholder": "Search Manga",
+      "txtCancel": "Cancel",
+      "btnSearch": "Search",
+      "btnExit": "Exit"
+    },
+    "setting": {
+      "textInvitationToLogin": "Log in to have the best experience!",
+      "loginWith": "Login with"
+    },
+    "account": {
+      "privacy": "Privacy",
+      "appVersion": "Version"
+    },
+    "privacy":{
+      "title": "Privacy"
+    },
+    "profile":{
+      "title": "Infomartion"
+    }
+  },
+  "toast": {
+    "backPress": "Press back 1 more time to exit the app!",
+    "loginSocialError": "Login failed, please try again later!",
+    "loginError": "An error occurred during login!",
+    "loginSuccess": "Logged in successfully!",
+    "suggestLogin": "Please log in to use this feature!",
+    "firstChapter": "This is the first chapter!",
+    "lastChapter": "This is the last chapter!",
+    "followMangaSuccess": "Followed the story successfully",
+    "unFollowMangaSuccess": "Unfollowed the story"
+  },
+  "dialog": {
+    "logout": {
+      "title": "Logout",
+      "description": "Are you sure you want to sign out?",
+      "txtCancel": "Cancel",
+      "txtAccept": "Logout"
+    }
+  },
+  "tabs": {
+    "home": "Home",
+    "offline": "Offline",
+    "shelf": "Shelf",
+    "ranking": "Ranking",
+    "discovery": "Discovery",
+    "account": "Account"
+  }
+}

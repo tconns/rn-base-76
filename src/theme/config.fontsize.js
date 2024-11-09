@@ -27,6 +27,14 @@ const fontSize = {
   '11xl': 64,
   '12xl': 68,
 }
+
+const fontFamilyName = {
+  bold: 'Poppins-Bold',
+  semiBold: 'Poppins-SemiBold',
+  medium: 'Poppins-Medium',
+  regular: 'Poppins-Regular',
+}
+
 const generateFontSizeStyles = (fontSize) => {
   const styles = {}
 
@@ -40,7 +48,23 @@ const generateFontSizeStyles = (fontSize) => {
   return styles
 }
 
+const generateTextDefine = (fontSize, fontFamilyName) => {
+  const styles = {}
+
+  Object.keys(fontSize).forEach((keySize) => {
+    const size = fontSize[keySize]
+    Object.keys(fontFamilyName).forEach((keyFamily) => {
+      const family = fontFamilyName[keyFamily]
+      styles[`text-${keySize}-${keyFamily}`] = { fontFamily: family, fontSize: size }
+    })
+  })
+
+  return styles
+}
+
 module.exports = {
   fontSize: generateFontSizeStyles(fontSize),
   fontSizeContent: fontSize,
+  textDefine: generateTextDefine(fontSize, fontFamilyName),
+  fontFamilyName,
 }

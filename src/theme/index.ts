@@ -1,3 +1,4 @@
+export * from './text.styles'
 export * from './fontSize'
 export * from './spacing'
 export * from './app.styles'

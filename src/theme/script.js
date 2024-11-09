@@ -4,7 +4,7 @@ const path = require('path')
 // Đọc các file cấu hình
 const { layout, opacity } = require('./config.layout')
 const { spacing, spacingContent } = require('./config.spacing')
-const { fontSize, fontSizeContent } = require('./config.fontsize')
+const { fontSize, fontSizeContent, textDefine, fontFamilyName } = require('./config.fontsize')
 const { rounded } = require('./config.rounded')
 const { shadow } = require('./config.shadow')
 const { commonColor, darkColor, gradientColor, lightColor, common } = require('./config.color')
@@ -97,5 +97,17 @@ export const fontSize = ${JSON.stringify(fontSizeContent, null, 2)}
 `
 
 fs.writeFileSync(path.join(__dirname, 'fontSize.ts'), fontSizeContentEnd, 'utf8')
+
+// Ghi nội dung vào file text.styles.ts
+
+const fontDefineContentEnd = `
+export const textDefine = ${JSON.stringify(textDefine, null, 2)}
+
+export type TextAtom = keyof typeof textDefine
+
+export const KEYS_FONT = ${JSON.stringify(fontFamilyName, null, 2)}
+`
+
+fs.writeFileSync(path.join(__dirname, 'text.styles.ts'), fontDefineContentEnd, 'utf8')
 
 console.log('Generate styles.ts successfully!')

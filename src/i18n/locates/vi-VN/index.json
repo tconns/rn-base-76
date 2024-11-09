@@ -1,0 +1,73 @@
+{
+  "screen": {
+    "splash": {
+      "title": "Khởi động"
+    },
+    "detail": {
+      "tabInfo": {
+        "title": "Chi tiết",
+        "labelView": "Lượt xem",
+        "labelChapter": "Số chương",
+        "labelGenre": "Thể loại",
+        "labelSummary": "Tóm tắt",
+        "noSummary": "Đang cập nhật...",
+        "labelReadMore": "Xem thêm",
+        "labelReadLess": "Rút gọn"
+      },
+      "tabChapter": {
+        "title": "Chương"
+      },
+      "footerView": {
+        "btnContinueReading": "Đọc tiếp",
+        "btnStartReading": "Đọc từ đầu"
+      }
+    },
+    "search": {
+      "txtPlaceholder": "Tìm kiếm truyện",
+      "txtCancel": "Hủy",
+      "btnSearch": "Tìm",
+      "btnExit": "Thoát"
+    },
+    "setting": {
+      "textInvitationToLogin": "Đăng nhập để có trải nghiệm tuyệt vời nhất bạn nhé!",
+      "loginWith": "Đăng nhập với"
+    },
+    "account": {
+      "privacy": "Chính sách",
+      "appVersion": "Phiên bản"
+    },
+    "privacy":{
+      "title": "Chính sách"
+    },
+    "profile":{
+      "title": "Thông tin tài khoản"
+    }
+  },
+  "toast": {
+    "backPress": "Chạm thêm 1 lần nữa để thoát ứng dụng!",
+    "loginSocialError": "Đăng nhập thất bại, vui lòng thử lại sau!",
+    "loginError": "Có lỗi xảy ra trong quá trình đăng nhập!",
+    "loginSuccess": "Đăng nhập thành công!",
+    "suggestLogin": "Vui lòng đăng nhập để sử dụng tính năng này!",
+    "firstChapter": "Đây là chapter đầu tiên!",
+    "lastChapter": "Đây là chapter mới nhất!",
+    "followMangaSuccess": "Đã theo dõi truyện thành công",
+    "unFollowMangaSuccess": "Đã bỏ theo dõi truyện"
+  },
+  "dialog":{
+    "logout":{
+      "title": "Đăng xuất",
+      "description": "Bạn có chắc chắn muốn đăng xuất?",
+      "txtCancel": "Hủy",
+      "txtAccept": "Đăng xuất"
+    }
+  },
+  "tabs": {
+    "home": "Trang chủ",
+    "offline": "Đã tải",
+    "shelf": "Tủ sách",
+    "ranking": "Xếp hạng",
+    "discovery": "Khám phá",
+    "account": "Tài khoản"
+  }
+}

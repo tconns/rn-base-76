@@ -9,6 +9,7 @@ import { KeyboardProvider } from 'react-native-keyboard-controller'
 
 import { FlashList } from '@shopify/flash-list'
 import TurboImage from 'react-native-turbo-image'
+import { AppNavigationContainer } from '@src/navigation'
 
 const App: React.FC<{}> = () => {
   const { themeColors, isDarkTheme } = useTheme()
@@ -18,7 +19,8 @@ const App: React.FC<{}> = () => {
         backgroundColor={themeColors.background}
         barStyle={!isDarkTheme ? 'dark-content' : 'light-content'}
       />
-      <View
+      <AppNavigationContainer />
+      {/* <View
         style={cn({
           atomic: ['flex-row', 'h-screen', 'w-screen'],
         })}
@@ -70,7 +72,7 @@ const App: React.FC<{}> = () => {
             keyExtractor={(item, index) => index.toString()}
           />
         </View>
-      </View>
+      </View> */}
     </SafeAreaProvider>
   )
 }
