@@ -49,7 +49,7 @@ export const AppNavigationContainer = () => {
     //FIX-NOTED: Bọc bằng View để xử lý vấn đề màu mặc định Navigation
     <View style={cn({ atomic: ['flex-1'], styles: [{ backgroundColor: themeColors.background }] })}>
       <Navigation
-        ref={navigationRef}
+        ref={navigationRef as any}
         theme={customTheme}
         onReady={() => NavigationService.setNavigation(navigationRef as INavigation)}
       />

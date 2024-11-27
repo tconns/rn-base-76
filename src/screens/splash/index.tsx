@@ -15,11 +15,11 @@ const Screen: React.FC<IPropsScreen> = ({ route }) => {
   useEffect(() => {
     console.log('Hello, World!')
     requestAnimationFrame(() => {
-      NavigationService.navigate(EnumRouterName.TAB, {
-        screen: EnumRouterName.HOME,
+      NavigationService.navigate({
+        name: EnumRouterName.TAB,
         params: {
-          
-        }
+          screen: EnumRouterName.PROFILE
+        },
       })
     })
   }, [])
@@ -28,7 +28,7 @@ const Screen: React.FC<IPropsScreen> = ({ route }) => {
     <BaseScreenComponent routerName={route.name}>
       <View style={cn({ atomic: ['flex-row', 'justify-between', 'items-center'], styles: [] })}>
         <View>
-          <Text type='text-2xl-bold'>Welcome Splash,</Text>
+          <Text type="text-2xl-bold">Welcome Splash,</Text>
         </View>
       </View>
     </BaseScreenComponent>

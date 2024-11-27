@@ -82,40 +82,9 @@ class NavigationServiceClass extends EventEmitter {
     return this.navigation
   }
 
-  public navigate<RouteName extends keyof ParamList>(...args: ScreenParamsPair<ParamList, RouteName>): void {
-    this.navigation?.navigate(...(args as any))
+  public navigate<RouteName extends keyof ParamList>(options: ScreenParamsPair<ParamList, RouteName>): void {
+    this.navigation?.navigate(options)
   }
-
-  // public navigate(config) {
-  //   return this.navigation?.navigate(config)
-  //   // if (config.routerName === EnumRouterName.LOGIN) {
-  //   //   if (AppInfoManager.isLoggedIn()) {
-  //   //     console.log('Tài khoản đã đăng nhập')
-  //   //     return
-  //   //   }
-  //   //   this.removeListener(EnumEventNavigation.ON_LOGIN_SUCCESS)
-  //   //   this.removeListener(EnumEventNavigation.ON_LOGIN_CANCEL)
-  //   //   const onLoginSuccess = () => {
-  //   //     console.log('onLoginSuccess')
-  //   //     this.removeListener(EnumEventNavigation.ON_LOGIN_CANCEL)
-  //   //     config?.callbackAfterLoginSuccess?.()
-  //   //     this.removeListener(EnumEventNavigation.ON_LOGIN_SUCCESS)
-  //   //   }
-  //   //   const onLoginCancel = () => {
-  //   //     console.log('onLoginCancel')
-  //   //     this.removeListener(EnumEventNavigation.ON_LOGIN_SUCCESS)
-  //   //     config?.callbackLoginCancel?.()
-  //   //     this.removeListener(EnumEventNavigation.ON_LOGIN_CANCEL)
-  //   //   }
-  //   //   this.once(EnumEventNavigation.ON_LOGIN_SUCCESS, onLoginSuccess)
-  //   //   this.once(EnumEventNavigation.ON_LOGIN_CANCEL, onLoginCancel)
-  //   // }
-  //   this.navigation?.navigate({
-  //     name: config.routerName,
-  //     params: config.params as any,
-  //     merge: config.merge,
-  //   })
-  // }
 
   public reset(state: IConfigReset | NavigationState) {
     this.navigation?.resetRoot(state)

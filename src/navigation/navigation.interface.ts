@@ -3,12 +3,16 @@ import {
   NavigationContainerRefWithCurrent,
   NavigationHelpers,
   NavigationState,
-  ParamListBase,
+  // ParamListBase,
   PartialState,
   RouteProp,
 } from '@react-navigation/native'
 
+export type ParamListBase = Record<EnumRouterName, object | undefined>
 export interface ParamList extends ParamListBase {
+  [EnumRouterName.TAB]: {
+    screen?: EnumRouterName
+  }
   [EnumRouterName.HOME]: {
     id: number
   }
@@ -27,9 +31,10 @@ export interface IConfigBack {}
 export interface IConfigReset extends PartialState<NavigationState> {}
 
 export type ScreenParamsPair<ParamList extends ParamListBase, RouteName extends keyof ParamList> = {
-  [Screen in keyof ParamList]: undefined extends ParamList[Screen] // Params are either undefined or a union with undefined
-    ?
-        | [screen: Screen] // if the params are optional, we don't have to provide it
-        | [screen: Screen, params: ParamList[Screen]]
-    : [screen: Screen, params: ParamList[Screen]]
+  [Screen in keyof ParamList]: {
+    name: Screen
+    params: ParamList[Screen]
+    path?: string
+    merge?: boolean
+  }
 }[RouteName]
