@@ -63,7 +63,7 @@ const TabScreen = () => {
             // return null
             return (
               <Text
-                type="text-caption-bold"
+                type="caption-bold-12"
                 style={cn({
                   atomic: [],
                   styles: [{ color, marginLeft: position === 'beside-icon' ? fontScale(15) : 0 }],
@@ -88,7 +88,7 @@ const TabScreen = () => {
             // return null
             return (
               <Text
-                type="text-caption-bold"
+                type="caption-bold-12"
                 style={cn({
                   atomic: [],
                   styles: [{ color, marginLeft: position === 'beside-icon' ? fontScale(15) : 0 }],

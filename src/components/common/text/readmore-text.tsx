@@ -59,7 +59,7 @@ export function ReadMoreText({
       {isiOS && (
         <Text
           style={{ height: 0 }}
-          type={'text-subheading-medium'}
+          type={'subheading-medium-16'}
           onTextLayout={({ nativeEvent: { lines } }) => {
             if (text.length > 0) {
               return
@@ -74,7 +74,7 @@ export function ReadMoreText({
       )}
       <Text
         style={[style]}
-        type={'text-subheading-medium'}
+        type={'subheading-medium-16'}
         numberOfLines={text.length === 0 ? numberOfLines : 0}
         onTextLayout={({ nativeEvent: { lines } }) => {
           if (text.length > 0) {

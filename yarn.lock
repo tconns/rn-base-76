@@ -6972,6 +6972,11 @@ react-native-mmkv@^3.1.0:
   resolved "https://registry.yarnpkg.com/react-native-mmkv/-/react-native-mmkv-3.1.0.tgz#4b2c321cf11bde2f9da32acf76e0178ecd332ccc"
   integrity sha512-HDh89nYVSufHMweZ3TVNUHQp2lsEh1ApaoV08bUOU1nrlmGgC3I7tGUn1Uy40Hs7yRMPKx5NWKE5Dh86jTVrwg==
 
+react-native-neo-orientation@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-neo-orientation/-/react-native-neo-orientation-2.1.0.tgz#65dae7e52b21b59ea9589848489991aee5d9dfa3"
+  integrity sha512-0E0LP5RsIa3t1RAU81GjSsZ2wrn4/AC85UAGEdyBxRypj01yCUFt5n5JbRGBeuOlJt35m+/O6aC6D2RN8E5mIQ==
+
 react-native-pager-view@^6.5.1:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-6.5.1.tgz#e639e8c975f4c749aae1c3120dc4208265fce4cc"
