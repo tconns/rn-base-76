@@ -30,7 +30,7 @@ export const Text: React.FC<ITextProps> = ({
   size,
   style,
   children,
-  type = 'text-body-medium',
+  type = 'body-medium-14',
   color,
   fontFamily,
   ...otherProps

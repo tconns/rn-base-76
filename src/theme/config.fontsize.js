@@ -55,7 +55,7 @@ const generateTextDefine = (fontSize, fontFamilyName) => {
     const size = fontSize[keySize]
     Object.keys(fontFamilyName).forEach((keyFamily) => {
       const family = fontFamilyName[keyFamily]
-      styles[`text-${keySize}-${keyFamily}`] = { fontFamily: family, fontSize: size }
+      styles[`${keySize}-${keyFamily}-${size}`] = { fontFamily: family, fontSize: size }
     })
   })
 

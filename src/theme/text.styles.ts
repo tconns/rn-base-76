@@ -1,411 +1,412 @@
+
 export const textDefine = {
-  'text-caption-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 12,
-  },
-  'text-caption-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 12,
-  },
-  'text-caption-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 12,
-  },
-  'text-caption-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 12,
-  },
-  'text-body-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 14,
-  },
-  'text-body-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 14,
-  },
-  'text-body-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 14,
-  },
-  'text-body-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 14,
-  },
-  'text-subheading-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 16,
-  },
-  'text-subheading-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 16,
-  },
-  'text-subheading-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 16,
-  },
-  'text-subheading-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 16,
-  },
-  'text-title-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 20,
-  },
-  'text-title-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 20,
-  },
-  'text-title-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 20,
-  },
-  'text-title-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 20,
-  },
-  'text-headline-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 24,
-  },
-  'text-headline-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 24,
-  },
-  'text-headline-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 24,
-  },
-  'text-headline-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 24,
-  },
-  'text-display1-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 28,
-  },
-  'text-display1-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 28,
-  },
-  'text-display1-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 28,
-  },
-  'text-display1-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 28,
-  },
-  'text-display2-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 32,
-  },
-  'text-display2-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 32,
-  },
-  'text-display2-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 32,
-  },
-  'text-display2-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 32,
-  },
-  'text-display3-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 36,
-  },
-  'text-display3-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 36,
-  },
-  'text-display3-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 36,
-  },
-  'text-display3-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 36,
-  },
-  'text-display4-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 40,
-  },
-  'text-display4-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 40,
-  },
-  'text-display4-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 40,
-  },
-  'text-display4-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 40,
-  },
-  'text-xs-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 8,
-  },
-  'text-xs-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 8,
-  },
-  'text-xs-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 8,
-  },
-  'text-xs-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 8,
-  },
-  'text-sm-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 12,
-  },
-  'text-sm-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 12,
-  },
-  'text-sm-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 12,
-  },
-  'text-sm-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 12,
-  },
-  'text-md-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 16,
-  },
-  'text-md-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 16,
-  },
-  'text-md-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 16,
-  },
-  'text-md-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 16,
-  },
-  'text-lg-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 20,
-  },
-  'text-lg-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 20,
-  },
-  'text-lg-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 20,
-  },
-  'text-lg-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 20,
-  },
-  'text-xl-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 24,
-  },
-  'text-xl-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 24,
-  },
-  'text-xl-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 24,
-  },
-  'text-xl-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 24,
-  },
-  'text-2xl-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 28,
-  },
-  'text-2xl-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 28,
-  },
-  'text-2xl-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 28,
-  },
-  'text-2xl-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 28,
-  },
-  'text-3xl-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 32,
-  },
-  'text-3xl-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 32,
-  },
-  'text-3xl-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 32,
-  },
-  'text-3xl-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 32,
-  },
-  'text-4xl-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 36,
-  },
-  'text-4xl-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 36,
-  },
-  'text-4xl-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 36,
-  },
-  'text-4xl-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 36,
-  },
-  'text-5xl-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 40,
-  },
-  'text-5xl-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 40,
-  },
-  'text-5xl-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 40,
-  },
-  'text-5xl-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 40,
-  },
-  'text-6xl-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 44,
-  },
-  'text-6xl-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 44,
-  },
-  'text-6xl-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 44,
-  },
-  'text-6xl-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 44,
-  },
-  'text-7xl-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 48,
-  },
-  'text-7xl-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 48,
-  },
-  'text-7xl-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 48,
-  },
-  'text-7xl-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 48,
-  },
-  'text-8xl-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 52,
-  },
-  'text-8xl-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 52,
-  },
-  'text-8xl-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 52,
-  },
-  'text-8xl-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 52,
-  },
-  'text-9xl-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 56,
-  },
-  'text-9xl-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 56,
-  },
-  'text-9xl-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 56,
-  },
-  'text-9xl-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 56,
-  },
-  'text-10xl-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 60,
-  },
-  'text-10xl-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 60,
-  },
-  'text-10xl-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 60,
-  },
-  'text-10xl-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 60,
-  },
-  'text-11xl-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 64,
-  },
-  'text-11xl-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 64,
-  },
-  'text-11xl-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 64,
-  },
-  'text-11xl-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 64,
-  },
-  'text-12xl-bold': {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 68,
-  },
-  'text-12xl-semiBold': {
-    fontFamily: 'Poppins-SemiBold',
-    fontSize: 68,
-  },
-  'text-12xl-medium': {
-    fontFamily: 'Poppins-Medium',
-    fontSize: 68,
-  },
-  'text-12xl-regular': {
-    fontFamily: 'Poppins-Regular',
-    fontSize: 68,
-  },
+  "caption-bold-12": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 12
+  },
+  "caption-semiBold-12": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 12
+  },
+  "caption-medium-12": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 12
+  },
+  "caption-regular-12": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 12
+  },
+  "body-bold-14": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 14
+  },
+  "body-semiBold-14": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 14
+  },
+  "body-medium-14": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 14
+  },
+  "body-regular-14": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 14
+  },
+  "subheading-bold-16": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 16
+  },
+  "subheading-semiBold-16": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 16
+  },
+  "subheading-medium-16": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 16
+  },
+  "subheading-regular-16": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 16
+  },
+  "title-bold-20": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 20
+  },
+  "title-semiBold-20": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 20
+  },
+  "title-medium-20": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 20
+  },
+  "title-regular-20": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 20
+  },
+  "headline-bold-24": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 24
+  },
+  "headline-semiBold-24": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 24
+  },
+  "headline-medium-24": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 24
+  },
+  "headline-regular-24": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 24
+  },
+  "display1-bold-28": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 28
+  },
+  "display1-semiBold-28": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 28
+  },
+  "display1-medium-28": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 28
+  },
+  "display1-regular-28": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 28
+  },
+  "display2-bold-32": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 32
+  },
+  "display2-semiBold-32": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 32
+  },
+  "display2-medium-32": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 32
+  },
+  "display2-regular-32": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 32
+  },
+  "display3-bold-36": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 36
+  },
+  "display3-semiBold-36": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 36
+  },
+  "display3-medium-36": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 36
+  },
+  "display3-regular-36": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 36
+  },
+  "display4-bold-40": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 40
+  },
+  "display4-semiBold-40": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 40
+  },
+  "display4-medium-40": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 40
+  },
+  "display4-regular-40": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 40
+  },
+  "xs-bold-8": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 8
+  },
+  "xs-semiBold-8": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 8
+  },
+  "xs-medium-8": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 8
+  },
+  "xs-regular-8": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 8
+  },
+  "sm-bold-12": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 12
+  },
+  "sm-semiBold-12": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 12
+  },
+  "sm-medium-12": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 12
+  },
+  "sm-regular-12": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 12
+  },
+  "md-bold-16": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 16
+  },
+  "md-semiBold-16": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 16
+  },
+  "md-medium-16": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 16
+  },
+  "md-regular-16": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 16
+  },
+  "lg-bold-20": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 20
+  },
+  "lg-semiBold-20": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 20
+  },
+  "lg-medium-20": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 20
+  },
+  "lg-regular-20": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 20
+  },
+  "xl-bold-24": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 24
+  },
+  "xl-semiBold-24": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 24
+  },
+  "xl-medium-24": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 24
+  },
+  "xl-regular-24": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 24
+  },
+  "2xl-bold-28": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 28
+  },
+  "2xl-semiBold-28": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 28
+  },
+  "2xl-medium-28": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 28
+  },
+  "2xl-regular-28": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 28
+  },
+  "3xl-bold-32": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 32
+  },
+  "3xl-semiBold-32": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 32
+  },
+  "3xl-medium-32": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 32
+  },
+  "3xl-regular-32": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 32
+  },
+  "4xl-bold-36": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 36
+  },
+  "4xl-semiBold-36": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 36
+  },
+  "4xl-medium-36": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 36
+  },
+  "4xl-regular-36": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 36
+  },
+  "5xl-bold-40": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 40
+  },
+  "5xl-semiBold-40": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 40
+  },
+  "5xl-medium-40": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 40
+  },
+  "5xl-regular-40": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 40
+  },
+  "6xl-bold-44": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 44
+  },
+  "6xl-semiBold-44": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 44
+  },
+  "6xl-medium-44": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 44
+  },
+  "6xl-regular-44": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 44
+  },
+  "7xl-bold-48": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 48
+  },
+  "7xl-semiBold-48": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 48
+  },
+  "7xl-medium-48": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 48
+  },
+  "7xl-regular-48": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 48
+  },
+  "8xl-bold-52": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 52
+  },
+  "8xl-semiBold-52": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 52
+  },
+  "8xl-medium-52": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 52
+  },
+  "8xl-regular-52": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 52
+  },
+  "9xl-bold-56": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 56
+  },
+  "9xl-semiBold-56": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 56
+  },
+  "9xl-medium-56": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 56
+  },
+  "9xl-regular-56": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 56
+  },
+  "10xl-bold-60": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 60
+  },
+  "10xl-semiBold-60": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 60
+  },
+  "10xl-medium-60": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 60
+  },
+  "10xl-regular-60": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 60
+  },
+  "11xl-bold-64": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 64
+  },
+  "11xl-semiBold-64": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 64
+  },
+  "11xl-medium-64": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 64
+  },
+  "11xl-regular-64": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 64
+  },
+  "12xl-bold-68": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 68
+  },
+  "12xl-semiBold-68": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 68
+  },
+  "12xl-medium-68": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 68
+  },
+  "12xl-regular-68": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 68
+  }
 }
 
 export type TextAtom = keyof typeof textDefine
 
 export const KEYS_FONT = {
-  bold: 'Poppins-Bold',
-  semiBold: 'Poppins-SemiBold',
-  medium: 'Poppins-Medium',
-  regular: 'Poppins-Regular',
+  "bold": "Poppins-Bold",
+  "semiBold": "Poppins-SemiBold",
+  "medium": "Poppins-Medium",
+  "regular": "Poppins-Regular"
 }

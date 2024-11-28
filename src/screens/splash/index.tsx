@@ -28,7 +28,7 @@ const Screen: React.FC<IPropsScreen> = ({ route }) => {
     <BaseScreenComponent routerName={route.name}>
       <View style={cn({ atomic: ['flex-row', 'justify-between', 'items-center'], styles: [] })}>
         <View>
-          <Text type="text-2xl-bold">Welcome Splash,</Text>
+          <Text type="2xl-bold-28">Welcome Splash,</Text>
         </View>
       </View>
     </BaseScreenComponent>
