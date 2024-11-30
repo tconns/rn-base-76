@@ -5,31 +5,35 @@ import { cn, useTheme, useThemedStyles } from '@src/theme'
 import { BaseScreenComponent, IPropsScreen } from '../screen.base'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Text, View } from '@src/components/common'
-import { EnumRouterName, NavigationService } from '@src/navigation'
+import { useOrientation } from '@src/modules/orientation'
+import { cmToPx, isTablet } from '@src/modules/util-scale'
 
 const Screen: React.FC<IPropsScreen> = ({ route }) => {
   const styles = useThemedStyles(style)
 
+  const { orientation } = useOrientation()
+
   const { commonColors } = useTheme()
 
-  useEffect(() => {
-    console.log('Hello, World!')
-    requestAnimationFrame(() => {
-      NavigationService.navigate({
-        name: EnumRouterName.TAB,
-        params: {
-          screen: EnumRouterName.HOME
-        },
-      })
-    })
-  }, [])
+  console.log('orientation', orientation, isTablet())
 
   return (
     <BaseScreenComponent routerName={route.name}>
       <View style={cn({ atomic: ['flex-row', 'justify-between', 'items-center'], styles: [] })}>
         <View>
-          <Text type="2xl-bold-28">Welcome Splash,</Text>
+          <Text>Welcome Back, Channel</Text>
         </View>
+        <View
+          style={cn({
+            styles: [
+              {
+                width: cmToPx(0.5),
+                height: cmToPx(0.5),
+                backgroundColor: commonColors.red
+              },
+            ],
+          })}
+        ></View>
       </View>
     </BaseScreenComponent>
   )

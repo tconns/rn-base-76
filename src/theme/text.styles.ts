@@ -1,5 +1,21 @@
 
 export const textDefine = {
+  "smallCap-bold-10": {
+    "fontFamily": "Poppins-Bold",
+    "fontSize": 10
+  },
+  "smallCap-semiBold-10": {
+    "fontFamily": "Poppins-SemiBold",
+    "fontSize": 10
+  },
+  "smallCap-medium-10": {
+    "fontFamily": "Poppins-Medium",
+    "fontSize": 10
+  },
+  "smallCap-regular-10": {
+    "fontFamily": "Poppins-Regular",
+    "fontSize": 10
+  },
   "caption-bold-12": {
     "fontFamily": "Poppins-Bold",
     "fontSize": 12

@@ -1,5 +1,6 @@
 const fontSize = {
   // Default
+  smallCap: 10,
   caption: 12,
   body: 14,
   subheading: 16,

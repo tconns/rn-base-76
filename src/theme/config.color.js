@@ -26,14 +26,16 @@ const commonColor = {
 
 const lightColor = {
   primary: '#CC0000',
-  background: commonColor.black,
+  menuBottom: commonColor.black,
+  background: '#181818',
   text: commonColor.gray4,
   border: commonColor.gray5,
 }
 
 const darkColor = {
   primary: '#CC0000',
-  background: commonColor.black,
+  menuBottom: commonColor.black,
+  background: '#181818',
   text: commonColor.white,
   border: commonColor.gray5,
 }

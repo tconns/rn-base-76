@@ -36,10 +36,10 @@
       "privacy": "Privacy",
       "appVersion": "Version"
     },
-    "privacy":{
+    "privacy": {
       "title": "Privacy"
     },
-    "profile":{
+    "profile": {
       "title": "Infomartion"
     }
   },
@@ -64,10 +64,9 @@
   },
   "tabs": {
     "home": "Home",
-    "offline": "Offline",
-    "shelf": "Shelf",
-    "ranking": "Ranking",
-    "discovery": "Discovery",
-    "account": "Account"
+    "channel": "Channel",
+    "explore": "Explore",
+    "competition": "Competition",
+    "more": "Setting"
   }
 }

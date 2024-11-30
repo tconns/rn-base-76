@@ -36,10 +36,10 @@
       "privacy": "Chính sách",
       "appVersion": "Phiên bản"
     },
-    "privacy":{
+    "privacy": {
       "title": "Chính sách"
     },
-    "profile":{
+    "profile": {
       "title": "Thông tin tài khoản"
     }
   },
@@ -54,8 +54,8 @@
     "followMangaSuccess": "Đã theo dõi truyện thành công",
     "unFollowMangaSuccess": "Đã bỏ theo dõi truyện"
   },
-  "dialog":{
-    "logout":{
+  "dialog": {
+    "logout": {
       "title": "Đăng xuất",
       "description": "Bạn có chắc chắn muốn đăng xuất?",
       "txtCancel": "Hủy",
@@ -64,10 +64,9 @@
   },
   "tabs": {
     "home": "Trang chủ",
-    "offline": "Đã tải",
-    "shelf": "Tủ sách",
-    "ranking": "Xếp hạng",
-    "discovery": "Khám phá",
-    "account": "Tài khoản"
+    "channel": "Truyền hình",
+    "explore": "Khám phá",
+    "competition": "Giải đấu",
+    "more": "Xem thêm"
   }
 }

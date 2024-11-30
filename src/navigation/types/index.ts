@@ -5,7 +5,10 @@ export enum EnumRouterName {
   SPLASH = '/splash/',
   TAB = '/tab/',
   HOME = '/home/',
-  PROFILE = '/profile/',
+  CHANNEL = '/channel/',
+  COMPETITION = '/competition/',
+  EXPLORE = '/explore/',
+  MORE = '/more/',
 }
 
 export interface IRoute {

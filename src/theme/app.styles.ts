@@ -1729,6 +1729,9 @@ export const ApplicationStyle = StyleSheet.create({
 'text-red': {
   "color": "#ef4444"
 },
+'font-smallCap': {
+  "fontSize": 10
+},
 'font-caption': {
   "fontSize": 12
 },
