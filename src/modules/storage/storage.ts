@@ -1,7 +1,10 @@
-import { DefineKeyStorage, IStorage, TypeKeyStorage } from './storage.interface'
+import { DefineKeyStorage, IStorage } from './storage.interface'
 import { MMKV } from 'react-native-mmkv'
 
-const storage = new MMKV()
+const storage = new MMKV({
+  id: 'app-base',
+  encryptionKey: 'app-base-encryption-key',
+})
 
 class LocalStorageClass implements IStorage {
   readonly DefineKeyStorage = DefineKeyStorage
@@ -12,7 +15,7 @@ class LocalStorageClass implements IStorage {
   }
 
   setItem(key: string, value: string): void {
-    storage.set(key,value)
+    storage.set(key, value)
   }
 
   removeItem(key: string): void {

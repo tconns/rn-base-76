@@ -10,6 +10,7 @@ import { KeyboardProvider } from 'react-native-keyboard-controller'
 import { FlashList } from '@shopify/flash-list'
 import TurboImage from 'react-native-turbo-image'
 import { AppNavigationContainer } from '@src/navigation'
+import { OrientationProvider } from '@src/modules/orientation'
 
 const App: React.FC<{}> = () => {
   const { themeColors, isDarkTheme } = useTheme()
@@ -80,13 +81,15 @@ const App: React.FC<{}> = () => {
 const AppContainer = () => {
   return (
     <ThemeProvider>
-      <GestureHandlerRootView>
-        <KeyboardProvider statusBarTranslucent>
-          <GestureDetectorProvider>
-            <App />
-          </GestureDetectorProvider>
-        </KeyboardProvider>
-      </GestureHandlerRootView>
+      <OrientationProvider>
+        <GestureHandlerRootView>
+          <KeyboardProvider statusBarTranslucent>
+            <GestureDetectorProvider>
+              <App />
+            </GestureDetectorProvider>
+          </KeyboardProvider>
+        </GestureHandlerRootView>
+      </OrientationProvider>
     </ThemeProvider>
   )
 }

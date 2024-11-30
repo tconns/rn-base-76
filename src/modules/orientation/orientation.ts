@@ -21,8 +21,18 @@ const IS_ANDROID = Platform.OS === 'android'
 
 let LocalEventEmitter: NativeEventEmitter | null = IS_ANDROID ? null : new NativeEventEmitter(NeoOrientation)
 
-export type OrientationCallback = (orientation: string) => void
+export type OrientationCallback = (orientation: OrientationType) => void
 export type AutoRotateCallback = (state: boolean) => void
+
+export enum OrientationType {
+  PORTRAIT = 'portrait',
+  PORTRAIT_UPSIDEDOWN = 'portraitUpsideDown',
+  LANDSCAPE_LEFT = 'landscapeLeft',
+  LANDSCAPE_RIGHT = 'landscapeRight',
+  FACE_UP = 'faceUp',
+  FACE_DOWN = 'faceDown',
+  UNKNOWN = 'unknown',
+}
 
 export interface Listeners {
   [key: string]: any
@@ -54,13 +64,13 @@ export default class Orientation {
   }
 
   static getOrientation = (cb: OrientationCallback): void => {
-    NeoOrientation.getOrientation((orientation: string) => {
+    NeoOrientation.getOrientation((orientation: OrientationType) => {
       cb(orientation)
     })
   }
 
   static getDeviceOrientation = (cb: OrientationCallback): void => {
-    NeoOrientation.getDeviceOrientation((orientation: string) => {
+    NeoOrientation.getDeviceOrientation((orientation: OrientationType) => {
       cb(orientation)
     })
   }
@@ -104,9 +114,12 @@ export default class Orientation {
     if (IS_ANDROID) {
       LocalEventEmitter = LocalEventEmitter ?? new NativeEventEmitter(NeoOrientation)
     }
-    listeners[key] = LocalEventEmitter?.addListener('orientationDidChange', (body: { orientation: string }) => {
-      cb(body.orientation)
-    })
+    listeners[key] = LocalEventEmitter?.addListener(
+      'orientationDidChange',
+      (body: { orientation: OrientationType }) => {
+        cb(body.orientation)
+      },
+    )
   }
 
   static removeOrientationListener = (cb: OrientationCallback): void => {
@@ -125,7 +138,7 @@ export default class Orientation {
     }
     listeners[key] = LocalEventEmitter?.addListener(
       'deviceOrientationDidChange',
-      (body: { deviceOrientation: string }) => {
+      (body: { deviceOrientation: OrientationType }) => {
         cb(body.deviceOrientation)
       },
     )
@@ -145,7 +158,7 @@ export default class Orientation {
     if (IS_ANDROID) {
       LocalEventEmitter = LocalEventEmitter ?? new NativeEventEmitter(NeoOrientation)
     }
-    listeners[key] = LocalEventEmitter?.addListener('lockDidChange', (body: { orientation: string }) => {
+    listeners[key] = LocalEventEmitter?.addListener('lockDidChange', (body: { orientation: OrientationType }) => {
       cb(body.orientation)
     })
   }
