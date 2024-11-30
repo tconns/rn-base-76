@@ -7,9 +7,13 @@ import { ScrollView } from 'react-native-gesture-handler'
 import { Text, View } from '@src/components/common'
 import { useOrientation } from '@src/modules/orientation'
 import { cmToPx, isTablet } from '@src/modules/util-scale'
+import { Pressable } from 'react-native'
+import { TypePlayerShow, usePlayer } from '@src/player'
 
 const Screen: React.FC<IPropsScreen> = ({ route }) => {
   const styles = useThemedStyles(style)
+
+  const { showState, setShowState } = usePlayer()
 
   const { orientation } = useOrientation()
 
@@ -23,13 +27,21 @@ const Screen: React.FC<IPropsScreen> = ({ route }) => {
         <View>
           <Text>Welcome Back, Home</Text>
         </View>
+        <Pressable
+          onPress={() => {
+            console.log('Pressable')
+            setShowState(TypePlayerShow.BIG)
+          }}
+        >
+          <Text>Press me</Text>
+        </Pressable>
         <View
           style={cn({
             styles: [
               {
                 width: cmToPx(0.5),
                 height: cmToPx(0.5),
-                backgroundColor: commonColors.red
+                backgroundColor: commonColors.red,
               },
             ],
           })}

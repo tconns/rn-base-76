@@ -11,6 +11,7 @@ import { FlashList } from '@shopify/flash-list'
 import TurboImage from 'react-native-turbo-image'
 import { AppNavigationContainer } from '@src/navigation'
 import { OrientationProvider } from '@src/modules/orientation'
+import { PlayerProvider, PlayerView } from '@src/player'
 
 const App: React.FC<{}> = () => {
   const { themeColors, isDarkTheme } = useTheme()
@@ -81,15 +82,18 @@ const App: React.FC<{}> = () => {
 const AppContainer = () => {
   return (
     <ThemeProvider>
-      <OrientationProvider>
-        <GestureHandlerRootView>
-          <KeyboardProvider statusBarTranslucent>
-            <GestureDetectorProvider>
-              <App />
-            </GestureDetectorProvider>
-          </KeyboardProvider>
-        </GestureHandlerRootView>
-      </OrientationProvider>
+      <GestureHandlerRootView>
+        <KeyboardProvider statusBarTranslucent>
+          <GestureDetectorProvider>
+            <PlayerProvider>
+              <OrientationProvider>
+                <App />
+                <PlayerView />
+              </OrientationProvider>
+            </PlayerProvider>
+          </GestureDetectorProvider>
+        </KeyboardProvider>
+      </GestureHandlerRootView>
     </ThemeProvider>
   )
 }
