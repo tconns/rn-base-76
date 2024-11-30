@@ -52,12 +52,14 @@ export const commonColor: IColorType = {
 }
 
 export const lightColor = {
-  "background": "#FFFFFF",
+  "primary": "#CC0000",
+  "background": "#000000",
   "text": "#27272a",
   "border": "#F7F8F8"
 }
 
 export const darkColor = {
+  "primary": "#CC0000",
   "background": "#000000",
   "text": "#FFFFFF",
   "border": "#F7F8F8"

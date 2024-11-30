@@ -6923,6 +6923,11 @@ react-native-device-info@^14.0.1:
   resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-14.0.1.tgz#88b0246be7b5eec00f16843306ac95244b23ceb9"
   integrity sha512-/ygggNdYgddjEnWxaNOwrL8bT9u8iJXCdz/CKpQi61SptIMmlCXmn125ey4rr0CTK/YIVpL6kZhVFInnNo+Q3w==
 
+react-native-dpi-metric@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-dpi-metric/-/react-native-dpi-metric-0.1.0.tgz#4aaeb03a80e587b9c8de2a977b6b8582bc11f3f3"
+  integrity sha512-oCtiJccPi+6Hl/BMGHXggaddKlvkOI2P1kOzqsFpCYucFq7qWKKB/U47MUlB1+ihmcpJtMFvqitWQ85goX0gaQ==
+
 react-native-drawer-layout@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/react-native-drawer-layout/-/react-native-drawer-layout-4.0.3.tgz#6f0b9e9327a023237a508e3bfd925dbc6d6de8b6"
@@ -6977,10 +6982,10 @@ react-native-neo-orientation@^2.2.0:
   resolved "https://registry.yarnpkg.com/react-native-neo-orientation/-/react-native-neo-orientation-2.2.0.tgz#0199350832bf80831123d033347b382ea418a3c5"
   integrity sha512-Ir1kADxVQ+NjgUdLYD+l6MgR21hbvJo29NbaT6rkKUxdY1QqAu6paYO7GJaGRjVzqcVij4SJ4qZC2fX119is5g==
 
-react-native-pager-view@^6.6.0:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-6.6.0.tgz#5bf04ed469e635c3a9f95fed46d17b93bdad1a86"
-  integrity sha512-LmgZs9ihypMEot82u22n98nKGP4E3ixg6Q/VwS7lbrpVZw7pmC9cdplh10PqlyGMBwPHYt875y5n+3sIzQvUkg==
+react-native-pager-view@6.5.1:
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-6.5.1.tgz#e639e8c975f4c749aae1c3120dc4208265fce4cc"
+  integrity sha512-YdX7bP+rPYvATMU7HzlMq9JaG3ui/+cVRbFZFGW+QshDULANFg9ECR1BA7H7JTIcO/ZgWCwF+1aVmYG5yBA9Og==
 
 react-native-reanimated@^3.16.3:
   version "3.16.3"

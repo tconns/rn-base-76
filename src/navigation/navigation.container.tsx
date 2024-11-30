@@ -14,7 +14,7 @@ export const AppNavigationContainer = () => {
   const customTheme: Theme = {
     dark: isDarkTheme,
     colors: {
-      primary: commonColors.cyan,
+      primary: themeColors.primary,
       background: themeColors.background,
       card: commonColors.cyan,
       text: themeColors.text,

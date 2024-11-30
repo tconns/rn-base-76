@@ -5,6 +5,7 @@ import { cn,  useTheme } from '@src/theme'
 import { EnumRouterName } from '../types'
 import { Text } from '@src/components/common'
 import { DefineI18n, useTranslation } from '@src/i18n'
+import { HomeIcon } from '@src/components/svg'
 
 const fontScale = (size: number) => size
 
@@ -37,12 +38,12 @@ const TabScreen = () => {
           // borderTopRightRadius: fontScale(20),
           // borderTopLeftRadius: fontScale(20)
         },
-        tabBarActiveTintColor: commonColors.cyan,
-        tabBarInactiveTintColor: commonColors.gray1,
+        tabBarActiveTintColor: themeColors.primary,
+        tabBarInactiveTintColor: commonColors.gray2,
         tabBarLabelStyle: {
-          // marginBottom: fontScale(5),
+          marginBottom: 5,
           height: 0,
-          marginBottom: 0
+          // marginBottom: 0
         },
         tabBarIconStyle: {
           marginBottom: 0,
@@ -56,14 +57,13 @@ const TabScreen = () => {
         options={{
           tabBarIcon: ({ color }) => {
             return (
-              null
+              <HomeIcon color={color} size={32} />
             )
           },
           tabBarLabel: ({ color, position }) => {
-            // return null
             return (
               <Text
-                type="caption-bold-12"
+                type="caption-regular-12"
                 style={cn({
                   atomic: [],
                   styles: [{ color, marginLeft: position === 'beside-icon' ? fontScale(15) : 0 }],
@@ -88,7 +88,7 @@ const TabScreen = () => {
             // return null
             return (
               <Text
-                type="caption-bold-12"
+                type="caption-regular-12"
                 style={cn({
                   atomic: [],
                   styles: [{ color, marginLeft: position === 'beside-icon' ? fontScale(15) : 0 }],

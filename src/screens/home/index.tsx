@@ -6,15 +6,16 @@ import { BaseScreenComponent, IPropsScreen } from '../screen.base'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Text, View } from '@src/components/common'
 import { useOrientation } from '@src/modules/orientation'
+import { cmToPx, isTablet } from '@src/modules/util-scale'
 
 const Screen: React.FC<IPropsScreen> = ({ route }) => {
   const styles = useThemedStyles(style)
 
-  const {orientation} = useOrientation()
+  const { orientation } = useOrientation()
 
   const { commonColors } = useTheme()
 
-  console.log('orientation', orientation)
+  console.log('orientation', orientation, isTablet())
 
   return (
     <BaseScreenComponent routerName={route.name}>
@@ -22,6 +23,17 @@ const Screen: React.FC<IPropsScreen> = ({ route }) => {
         <View>
           <Text>Welcome Back, Fuck</Text>
         </View>
+        <View
+          style={cn({
+            styles: [
+              {
+                width: cmToPx(0.5),
+                height: cmToPx(0.5),
+                backgroundColor: commonColors.red
+              },
+            ],
+          })}
+        ></View>
       </View>
     </BaseScreenComponent>
   )
