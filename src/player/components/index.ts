@@ -1,1 +1,1 @@
-export * from './player-view'
+export * from './gesture-view'

@@ -24,19 +24,26 @@ export const PlayerController = {
 export interface PlayerSetting {
   showState: TypePlayerShow
   setShowState: (state: TypePlayerShow) => void
+  isFullScreen: boolean
+  setIsFullScreen: (state: boolean) => void
 }
 
 export const PlayerContext = createContext({
   showState: TypePlayerShow.NONE,
-  setShowState: (state: TypePlayerShow) => {},
+  setShowState: (state: TypePlayerShow) => { },
+  isFullScreen: false,
+  setIsFullScreen: (state: boolean) => { },
 })
 
 export const PlayerProvider = ({ children }: { children: JSX.Element | ReactNode | null }) => {
   const [showState, setShowState] = useState<TypePlayerShow>(TypePlayerShow.NONE)
+  const [isFullScreen, setIsFullScreen] = useState<boolean>(false)
 
   const theme: PlayerSetting = {
     showState,
     setShowState,
+    isFullScreen,
+    setIsFullScreen,
   }
 
   useEffect(() => {
