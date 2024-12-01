@@ -15,8 +15,6 @@ const Screen: React.FC<IPropsScreen> = ({ route }) => {
 
   const { commonColors } = useTheme()
 
-  console.log('orientation', orientation, isTablet())
-
   return (
     <BaseScreenComponent routerName={route.name}>
       <View style={cn({ atomic: ['flex-row', 'justify-between', 'items-center'], styles: [] })}>

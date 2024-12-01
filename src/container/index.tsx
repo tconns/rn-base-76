@@ -81,20 +81,22 @@ const App: React.FC<{}> = () => {
 
 const AppContainer = () => {
   return (
-    <ThemeProvider>
-      <GestureHandlerRootView>
-        <KeyboardProvider statusBarTranslucent>
-          <GestureDetectorProvider>
-            <PlayerProvider>
-              <OrientationProvider>
-                <App />
-                <PlayerView />
-              </OrientationProvider>
-            </PlayerProvider>
-          </GestureDetectorProvider>
-        </KeyboardProvider>
-      </GestureHandlerRootView>
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <GestureHandlerRootView>
+          <KeyboardProvider statusBarTranslucent>
+            <GestureDetectorProvider>
+              <PlayerProvider>
+                <OrientationProvider>
+                  <App />
+                  <PlayerView />
+                </OrientationProvider>
+              </PlayerProvider>
+            </GestureDetectorProvider>
+          </KeyboardProvider>
+        </GestureHandlerRootView>
+      </ThemeProvider>
+    </SafeAreaProvider>
   )
 }
 
