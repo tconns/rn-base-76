@@ -182,7 +182,7 @@ export default class Orientation {
     }
   }
 
-  static getInitialOrientation = (): string => {
+  static getInitialOrientation = (): OrientationType => {
     return NeoOrientation.initialOrientation
   }
 

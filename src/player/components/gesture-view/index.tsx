@@ -1,4 +1,4 @@
-import { cmToPx } from '@src/modules/util-scale'
+import { cmToPx, navbar } from '@src/modules/util-scale'
 import { TypePlayerShow } from '@src/player/provider'
 import { usePlayer } from '@src/player/usePlayer'
 import { cn, commonColor, dimensions } from '@src/theme'
@@ -19,6 +19,11 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { PlayerContainer } from '../player-container'
 import { useOrientation } from '@src/modules/orientation'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import SystemNavigationBar from 'react-native-system-navigation-bar'
+
+SystemNavigationBar.setNavigationColor('#000000', 'light', 'both')
+SystemNavigationBar.setFitsSystemWindows(false)
+// SystemNavigationBar.setBarMode('light', 'both')
 
 const RATIO_ASPECT = 16 / 9
 
@@ -27,7 +32,7 @@ const heightDevice = dimensions.screen.height
 
 const minWidth = widthDevice / RATIO_ASPECT
 
-const PADDING_BOTTOM = 50
+const PADDING_BOTTOM = 65
 
 const MIN_SCALE = 0.6
 const MIN_DELTA_TRANS_Y = 40
@@ -40,9 +45,13 @@ export const PlayerGestureView = () => {
 
   const { lockToLandscape, lockToPortrait } = useOrientation()
 
-  const { bottom, top, left, right } = useSafeAreaInsets()
+  const { left, right, top, bottom } = useSafeAreaInsets()
+
+  console.log('PlayerGestureView', left, right, top, bottom, widthDevice, heightDevice, navbar)
 
   const isNormal = showState === TypePlayerShow.BIG
+
+  const paddingTop = StatusBar.currentHeight || top
 
   useEffect(() => {
     switch (showState) {
@@ -50,7 +59,7 @@ export const PlayerGestureView = () => {
       case TypePlayerShow.BIG:
         playerHeight.value = withTiming(widthDevice / RATIO_ASPECT)
         playerWidth.value = withTiming(widthDevice)
-        playerTransY.value = withTiming(top)
+        playerTransY.value = withTiming(paddingTop)
         playerTransX.value = withTiming(0)
         playerScale.value = withTiming(1)
         borderPlayer.value = withTiming(0)
@@ -64,7 +73,7 @@ export const PlayerGestureView = () => {
         break
       case TypePlayerShow.FULL:
         playerHeight.value = withTiming(widthDevice)
-        playerWidth.value = withTiming(heightDevice - left - right)
+        playerWidth.value = withTiming(heightDevice - navbar / 2)
         playerTransX.value = withTiming(0)
         playerTransY.value = withTiming(0)
         playerScale.value = withTiming(1)
@@ -79,7 +88,7 @@ export const PlayerGestureView = () => {
   const playerWidth = useSharedValue(widthDevice)
 
   const playerScale = useSharedValue(1)
-  const playerTransY = useSharedValue(top)
+  const playerTransY = useSharedValue(paddingTop)
   const playerTransX = useSharedValue(0)
   const borderPlayer = useSharedValue(0)
 
@@ -117,8 +126,8 @@ export const PlayerGestureView = () => {
       if (!panIsVertical.value && !success) {
         return
       }
-      const deltaHeight = (widthDevice - minWidth) / RATIO_ASPECT
-      const minY = heightDevice - PADDING_BOTTOM - playerHeight.value - deltaHeight / 2
+      const deltaHeight = minWidth / RATIO_ASPECT
+      const minY = heightDevice - paddingTop - PADDING_BOTTOM - navbar - deltaHeight
 
       switch (showState) {
         case TypePlayerShow.BIG:
@@ -200,13 +209,18 @@ export const PlayerGestureView = () => {
 
   useEffect(() => {
     'worklet'
+    if (showState === TypePlayerShow.NONE) {
+      return
+    }
     runOnJS(setShowState)(isFullScreen ? TypePlayerShow.FULL : TypePlayerShow.BIG)
     if (isFullScreen) {
       runOnJS(StatusBar.setHidden)(true)
+      SystemNavigationBar.navigationHide()
       runOnJS(lockToLandscape)()
       return
     }
     runOnJS(StatusBar.setHidden)(false)
+    SystemNavigationBar.navigationShow()
     runOnJS(lockToPortrait)()
   }, [isFullScreen])
 
@@ -215,21 +229,32 @@ export const PlayerGestureView = () => {
   }
 
   return (
-    <GestureDetector gesture={gesture}>
-      <Animated.View
-        style={cn({
-          atomic: ['flex-1', 'absolute', 'z-10'],
-          styles: [
-            {
-              backgroundColor: commonColor.black,
-              borderColor: commonColor.gray1,
-            },
-            animatedStyle,
-          ],
-        })}
-      >
-        <PlayerContainer />
-      </Animated.View>
-    </GestureDetector>
+    <>
+      {/* <StatusBar
+        barStyle={'light-content'}
+        translucent
+        backgroundColor={'#000'}
+      /> */}
+      <GestureDetector gesture={gesture}>
+        <Animated.View
+          style={cn({
+            atomic: ['flex-1', 'absolute', 'z-10'],
+            styles: [
+              {
+                backgroundColor: commonColor.black,
+                borderColor: commonColor.gray1,
+              },
+              animatedStyle,
+            ],
+          })}
+        >
+          {showState === TypePlayerShow.MINI ||
+          showState === TypePlayerShow.BIG ||
+          showState === TypePlayerShow.FULL ? (
+            <PlayerContainer />
+          ) : null}
+        </Animated.View>
+      </GestureDetector>
+    </>
   )
 }

@@ -25,8 +25,8 @@ export const PlayerContainer = () => {
     }
   }
 
-  const onProgress = (data: OnProgressData) => {}
-
+  const onProgress = (data: OnProgressData) => { }
+  
   return (
     <Animated.View style={StyleSheet.absoluteFillObject}>
       <Video

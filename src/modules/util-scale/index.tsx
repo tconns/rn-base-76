@@ -19,7 +19,7 @@ const DpiMetric = NativeModules.DpiMetric
 
 const pixelDensity = PixelRatio.get()
 
-const { deviceInch, dpi } = DpiMetric.getConstants()
+const { deviceInch, dpi, navbar } = DpiMetric.getConstants()
 
 const { width, height } = Dimensions.get('window')
 
@@ -59,4 +59,4 @@ const isAndroid = Platform.OS === 'android'
 const isIOS = Platform.OS === 'ios'
 const isSmallDevice = deviceInch < 4.8
 
-export { deviceInch, cmToPx, isTablet, fontScale, isAndroid, isIOS, isSmallDevice, scale }
+export { deviceInch, cmToPx, isTablet, fontScale, isAndroid, isIOS, isSmallDevice, scale, navbar }

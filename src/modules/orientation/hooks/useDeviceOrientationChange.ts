@@ -1,5 +1,5 @@
 import { useRef, useEffect, MutableRefObject } from 'react'
-import Orientation, { OrientationCallback } from '../orientation'
+import Orientation, { OrientationCallback, OrientationType } from '../orientation'
 
 export const useDeviceOrientationChange = (callback: OrientationCallback): void => {
   const savedCallback: MutableRefObject<OrientationCallback | undefined> = useRef()
@@ -9,7 +9,7 @@ export const useDeviceOrientationChange = (callback: OrientationCallback): void 
   }, [callback])
 
   useEffect(() => {
-    const listener = (ori: string): void => {
+    const listener = (ori: OrientationType): void => {
       if (savedCallback.current) {
         savedCallback.current(ori)
       }
