@@ -6923,10 +6923,10 @@ react-native-device-info@^14.0.1:
   resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-14.0.1.tgz#88b0246be7b5eec00f16843306ac95244b23ceb9"
   integrity sha512-/ygggNdYgddjEnWxaNOwrL8bT9u8iJXCdz/CKpQi61SptIMmlCXmn125ey4rr0CTK/YIVpL6kZhVFInnNo+Q3w==
 
-react-native-dpi-metric@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-dpi-metric/-/react-native-dpi-metric-0.1.0.tgz#4aaeb03a80e587b9c8de2a977b6b8582bc11f3f3"
-  integrity sha512-oCtiJccPi+6Hl/BMGHXggaddKlvkOI2P1kOzqsFpCYucFq7qWKKB/U47MUlB1+ihmcpJtMFvqitWQ85goX0gaQ==
+react-native-dpi-metric@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-dpi-metric/-/react-native-dpi-metric-0.1.1.tgz#009efecab7635a5a210872de43d473023a0e717c"
+  integrity sha512-KGppYkzRz3aWYFB5uSRC0JYveh3sH44BquUl5QB1CITDoCCkXkQH6VfUEfCFPimqiDOkSbBCuVEjePbRTICC7Q==
 
 react-native-drawer-layout@^4.0.3:
   version "4.0.3"

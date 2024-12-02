@@ -3,7 +3,6 @@ import React, { memo, useCallback, useEffect } from 'react'
 import { style } from './styles'
 import { cn, useTheme, useThemedStyles } from '@src/theme'
 import { BaseScreenComponent, IPropsScreen } from '../screen.base'
-import { ScrollView } from 'react-native-gesture-handler'
 import { Text, View } from '@src/components/common'
 import { EnumRouterName, NavigationService } from '@src/navigation'
 
@@ -15,12 +14,20 @@ const Screen: React.FC<IPropsScreen> = ({ route }) => {
   useEffect(() => {
     console.log('Hello, World!')
     requestAnimationFrame(() => {
-      NavigationService.navigate({
-        name: EnumRouterName.TAB,
-        params: {
-          screen: EnumRouterName.HOME
-        },
+      NavigationService.reset({
+        index: 0,
+        routes: [
+          {
+            name: EnumRouterName.TAB,
+          },
+        ],
       })
+      // NavigationService.navigate({
+      //   name: EnumRouterName.TAB,
+      //   params: {
+      //     screen: EnumRouterName.HOME,
+      //   },
+      // })
     })
   }, [])
 
@@ -28,7 +35,7 @@ const Screen: React.FC<IPropsScreen> = ({ route }) => {
     <BaseScreenComponent routerName={route.name}>
       <View style={cn({ atomic: ['flex-row', 'justify-between', 'items-center'], styles: [] })}>
         <View>
-          <Text type="2xl-bold-28">Welcome Splash,</Text>
+          <Text type="2xl-bold-28"></Text>
         </View>
       </View>
     </BaseScreenComponent>

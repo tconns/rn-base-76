@@ -20,6 +20,7 @@ import { PlayerContainer } from '../player-container'
 import { useOrientation } from '@src/modules/orientation'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import SystemNavigationBar from 'react-native-system-navigation-bar'
+import { opacity } from '@src/theme/config.layout'
 
 SystemNavigationBar.setNavigationColor('#000000', 'light', 'both')
 SystemNavigationBar.setFitsSystemWindows(false)
@@ -41,7 +42,7 @@ const BOUNCE_DELTA_TRANS_X = 100
 const BORDER_WIDTH = 2
 
 export const PlayerGestureView = () => {
-  const { showState, setShowState, isFullScreen, setIsFullScreen } = usePlayer()
+  const { showState, setShowState, isFullScreen, setIsFullScreen, showControl, setShowControl } = usePlayer()
 
   const { lockToLandscape, lockToPortrait } = useOrientation()
 
@@ -186,6 +187,10 @@ export const PlayerGestureView = () => {
           return
         }
 
+        if (showControl) {
+          return
+        }
+
         switch (showState) {
           case TypePlayerShow.MINI:
             runOnJS(setShowState)(TypePlayerShow.BIG)
@@ -195,8 +200,20 @@ export const PlayerGestureView = () => {
         }
       }
     })
+  
+  const singleTapHandle = Gesture.Tap().onEnd((_e, success) => {
+    if (showState === TypePlayerShow.MINI) {
+      return
+    }
+    if (showControl) {
+      return
+    }
+    if (success) {
+      runOnJS(setShowControl)(!showControl)
+    }
+  })
 
-  const gesture = Gesture.Race(doubleTapHandle, defaultPanGesture)
+  const gesture = Gesture.Race(doubleTapHandle, defaultPanGesture, singleTapHandle)
 
   const animatedStyle = useAnimatedStyle(() => {
     return {
@@ -224,37 +241,24 @@ export const PlayerGestureView = () => {
     runOnJS(lockToPortrait)()
   }, [isFullScreen])
 
-  if (showState === TypePlayerShow.NONE) {
-    return null
-  }
-
   return (
-    <>
-      {/* <StatusBar
-        barStyle={'light-content'}
-        translucent
-        backgroundColor={'#000'}
-      /> */}
-      <GestureDetector gesture={gesture}>
-        <Animated.View
-          style={cn({
-            atomic: ['flex-1', 'absolute', 'z-10'],
-            styles: [
-              {
-                backgroundColor: commonColor.black,
-                borderColor: commonColor.gray1,
-              },
-              animatedStyle,
-            ],
-          })}
-        >
-          {showState === TypePlayerShow.MINI ||
-          showState === TypePlayerShow.BIG ||
-          showState === TypePlayerShow.FULL ? (
-            <PlayerContainer />
-          ) : null}
-        </Animated.View>
-      </GestureDetector>
-    </>
+    <GestureDetector gesture={gesture}>
+      <Animated.View
+        style={cn({
+          atomic: ['flex-1', 'absolute', 'z-10'],
+          styles: [
+            {
+              backgroundColor: commonColor.black,
+              borderColor: commonColor.gray1,
+              // opacity: showState === TypePlayerShow.NONE ? 0 : 1,
+              display: showState === TypePlayerShow.NONE ? 'none' : 'flex',
+            },
+            animatedStyle,
+          ],
+        })}
+      >
+        <PlayerContainer enable={showState !== TypePlayerShow.NONE} />
+      </Animated.View>
+    </GestureDetector>
   )
 }

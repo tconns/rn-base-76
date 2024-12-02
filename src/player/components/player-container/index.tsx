@@ -2,13 +2,16 @@ import { cmToPx } from '@src/modules/util-scale'
 import { TypePlayerShow } from '@src/player/provider'
 import { usePlayer } from '@src/player/usePlayer'
 import React, { useEffect, useRef, useState } from 'react'
-import { Pressable, StyleSheet, Text } from 'react-native'
-import Animated from 'react-native-reanimated'
+import { Pressable, StyleSheet, View } from 'react-native'
+import Animated, { runOnJS } from 'react-native-reanimated'
 import Video, { VideoRef, OnLoadData, OnProgressData } from 'react-native-video'
 import { VideoLoading } from '../loading'
+import { Gesture, GestureDetector } from 'react-native-gesture-handler'
+import { Text } from '@src/components/common'
+import { Control } from '../control'
 
-export const PlayerContainer = () => {
-  const { setIsFullScreen, isFullScreen } = usePlayer()
+export const PlayerContainer: React.FC<{ enable: boolean }> = ({ enable }) => {
+  const { setIsFullScreen, isFullScreen, showControl, setShowControl, showState } = usePlayer()
 
   const [loading, setIsLoading] = useState(false)
   const [paused, setPaused] = useState(false)
@@ -25,8 +28,24 @@ export const PlayerContainer = () => {
     }
   }
 
-  const onProgress = (data: OnProgressData) => { }
-  
+  const onProgress = (data: OnProgressData) => {}
+
+  useEffect(() => {
+    if (!enable) {
+      videoPlayer.current?.pause()
+    } else {
+      videoPlayer.current?.resume()
+    }
+  }, [enable])
+
+  const singleTapHandle = Gesture.Tap().onEnd((_e, success) => {
+    if (success) {
+      runOnJS(setShowControl)(!showControl)
+    }
+  })
+
+  const gesture = Gesture.Race(singleTapHandle)
+
   return (
     <Animated.View style={StyleSheet.absoluteFillObject}>
       <Video
@@ -40,11 +59,15 @@ export const PlayerContainer = () => {
         onLoad={onLoad}
         onProgress={onProgress}
         progressUpdateInterval={1000}
+        // fullscreen={isFullScreen}
+        paused={paused}
       />
       <VideoLoading loading={loading} />
-      <Pressable onPress={() => setIsFullScreen(!isFullScreen)}>
-        <Text style={{ color: 'white', marginTop: 60 }}>Press me</Text>
-      </Pressable>
+      {showControl && (
+        <GestureDetector gesture={gesture}>
+          <Control />
+        </GestureDetector>
+      )}
     </Animated.View>
   )
 }
