@@ -7,6 +7,6 @@ export default (): {
   URL_CONFIG: IUrlConfig
 } => ({
   URL_CONFIG: {
-    baseUrl: 'https://ohmanga.site',
+    baseUrl: 'https://apigwon.gviet.vn',
   },
 })

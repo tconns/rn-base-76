@@ -1,12 +1,11 @@
 import React, { memo } from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createBottomTabNavigator, TransitionSpecs } from '@react-navigation/bottom-tabs'
 import { ChannelScreen, HomeScreen, MoreScreen, CompetitionScreen, ExploreScreen } from '@src/screens'
 import { cn, useTheme } from '@src/theme'
 import { EnumRouterName } from '../types'
 import { Text } from '@src/components/common'
 import { DefineI18n, useTranslation } from '@src/i18n'
 import { ChannelIcon, HomeIcon, ExploreIcon, CompetitionIcon, MoreIcon } from '@src/components/svg'
-import { fontScale } from '@src/modules/util-scale'
 
 const Tab = createBottomTabNavigator()
 
@@ -18,6 +17,7 @@ const TabScreen = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
+        tabBarHideOnKeyboard: true,
         tabBarStyle: {
           backgroundColor: themeColors.menuBottom,
           height: 65,
@@ -44,6 +44,7 @@ const TabScreen = () => {
         tabBarIconStyle: {
           marginBottom: spacing['sm-2'],
         },
+        animation: 'shift',
       }}
     >
       <Tab.Screen
@@ -71,6 +72,7 @@ const TabScreen = () => {
               </Text>
             )
           },
+          transitionSpec: TransitionSpecs.FadeSpec,
         }}
       />
       <Tab.Screen
