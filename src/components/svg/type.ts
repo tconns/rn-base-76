@@ -1,5 +1,5 @@
 export type ISVGProps = {
-  color: string
+  color?: string
   size: number
   fillOpacity?: number
 }

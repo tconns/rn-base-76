@@ -28,7 +28,7 @@ const lightColor = {
   primary: '#CC0000',
   menuBottom: commonColor.black,
   background: '#181818',
-  text: commonColor.gray4,
+  text: commonColor.white,
   border: commonColor.gray5,
 }
 

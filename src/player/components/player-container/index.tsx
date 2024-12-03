@@ -15,20 +15,28 @@ export const PlayerContainer: React.FC<{ enable: boolean }> = ({ enable }) => {
 
   const [loading, setIsLoading] = useState(false)
   const [paused, setPaused] = useState(false)
+  const [isEnd, setIsEnd] = useState(false)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [duration, setDuration] = useState(0)
 
   const videoPlayer = useRef<VideoRef>(null)
 
   const onLoadStart = () => {
     setIsLoading(true)
+    setIsEnd(false)
   }
 
   const onLoad = (data: OnLoadData) => {
     if (data.duration) {
       setIsLoading(false)
+      setCurrentTime(data.currentTime)
+      setDuration(data.duration)
     }
   }
 
-  const onProgress = (data: OnProgressData) => {}
+  const onProgress = (data: OnProgressData) => {
+    setCurrentTime(data.currentTime)
+  }
 
   useEffect(() => {
     if (!enable) {
@@ -36,11 +44,12 @@ export const PlayerContainer: React.FC<{ enable: boolean }> = ({ enable }) => {
     } else {
       videoPlayer.current?.resume()
     }
+    // videoPlayer.current?.seek(17*60)
   }, [enable])
 
   const singleTapHandle = Gesture.Tap().onEnd((_e, success) => {
     if (success) {
-      runOnJS(setShowControl)(!showControl)
+      runOnJS(setShowControl)(false)
     }
   })
 
@@ -61,11 +70,31 @@ export const PlayerContainer: React.FC<{ enable: boolean }> = ({ enable }) => {
         progressUpdateInterval={1000}
         // fullscreen={isFullScreen}
         paused={paused}
+        onEnd={() => {
+          setIsEnd(true)
+          setPaused(true)
+        }}
       />
       <VideoLoading loading={loading} />
-      {showControl && (
+      {(showState === TypePlayerShow.BIG || showState === TypePlayerShow.FULL) && showControl && (
         <GestureDetector gesture={gesture}>
-          <Control />
+          <Control
+            currentTime={currentTime}
+            duration={duration}
+            paused={paused}
+            isEnd={isEnd}
+            onPlay={() => {
+              setPaused(false)
+            }}
+            onPause={() => {
+              setPaused(true)
+            }}
+            onEnd={() => {
+              videoPlayer.current?.seek(0)
+              setPaused(true)
+              setIsEnd(false)
+            }}
+          />
         </GestureDetector>
       )}
     </Animated.View>

@@ -55,7 +55,7 @@ export const lightColor = {
   "primary": "#CC0000",
   "menuBottom": "#000000",
   "background": "#181818",
-  "text": "#27272a",
+  "text": "#FFFFFF",
   "border": "#F7F8F8"
 }
 
