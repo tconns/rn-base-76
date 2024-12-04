@@ -1,6 +1,17 @@
 import { appConfig } from '@src/configurations'
 import { LocalStorage } from '@src/modules/storage'
 
+interface IAppInfo {
+  deviceId: string
+  deviceName: string
+  osVersion: string
+  dtId: number
+  spId: string
+  deviceType: number
+  platform: number
+  versionCode: number
+}
+
 class AppInfoManagerClass {
   private static _instance: AppInfoManagerClass | undefined
   private _accessToken: string | null = null
@@ -51,6 +62,21 @@ class AppInfoManagerClass {
   isLoggedIn(): boolean {
     if (!!this._accessToken && !!this._refreshToken) return true
     return false
+  }
+
+  getAppInfo(): IAppInfo {
+    const { platform, versionCode, deviceType, spId, dtId, getDeviceId, getDeviceName, getOSVersion } =
+      appConfig().APP_CONFIG
+    return {
+      deviceId: getDeviceId(),
+      deviceName: getDeviceName(),
+      osVersion: getOSVersion(),
+      dtId: dtId,
+      spId: spId.toString(),
+      deviceType: deviceType,
+      platform: platform,
+      versionCode: versionCode,
+    }
   }
 }
 

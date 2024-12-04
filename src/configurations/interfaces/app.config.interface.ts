@@ -1,5 +1,10 @@
 export interface IAppConfig {
   getDeviceId(): string
+  getDeviceName(): string
+  getOSVersion(): string
   versionCode: number
-  platform: 'web' | 'android' | 'ios'
+  platform: number
+  dtId: number
+  spId: number
+  deviceType: number
 }

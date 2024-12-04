@@ -14,6 +14,7 @@ export const DefineKeyStorage = {
   ACCESS_TOKEN: md5Key('access_token'),
   REFRESH_TOKEN: md5Key('refresh_token'),
   USER_INFO: md5Key('user_info'),
+  CLIENT_ID: md5Key('client_id'),
 } as const
 
 export type TypeKeyStorage = (typeof DefineKeyStorage)[keyof typeof DefineKeyStorage]
