@@ -7,4 +7,5 @@ export interface IAppConfig {
   dtId: number
   spId: number
   deviceType: number
+  appSecret: string
 }

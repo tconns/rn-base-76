@@ -16,6 +16,7 @@ class AppInfoManagerClass {
   private static _instance: AppInfoManagerClass | undefined
   private _accessToken: string | null = null
   private _refreshToken: string | null = null // private _storeRedux: Store;
+  private _clientId: string = 'null'
 
   static getInstance(): AppInfoManagerClass {
     return this._instance ?? (this._instance = new AppInfoManagerClass())
@@ -29,6 +30,7 @@ class AppInfoManagerClass {
     this._accessToken = this.getAccessToken()
     // console.log('AppInfoManager:', this._accessToken)
     this._refreshToken = this.getRefreshToken()
+    this._clientId = this.getClientId()
   }
 
   setAccessToken(accessToken: string): void {
@@ -77,6 +79,18 @@ class AppInfoManagerClass {
       platform: platform,
       versionCode: versionCode,
     }
+  }
+
+  setClientId(clientId): void {
+    if (!clientId) return
+    this._clientId = clientId
+    LocalStorage.setItem(LocalStorage.DefineKeyStorage.CLIENT_ID, clientId)
+  }
+
+  getClientId(): string {
+    return !!this._clientId && this._clientId !== 'null'
+      ? this._clientId
+      : LocalStorage.getItem(LocalStorage.DefineKeyStorage.CLIENT_ID) || 'null'
   }
 }
 
