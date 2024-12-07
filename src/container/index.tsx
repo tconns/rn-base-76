@@ -12,6 +12,8 @@ import TurboImage from 'react-native-turbo-image'
 import { AppNavigationContainer } from '@src/navigation'
 import { OrientationProvider } from '@src/modules/orientation'
 import { PlayerProvider, PlayerGestureView } from '@src/player'
+import { Provider } from 'react-redux'
+import { store } from '@src/redux/store'
 
 const App: React.FC<{}> = () => {
   const { themeColors, isDarkTheme } = useTheme()
@@ -81,22 +83,24 @@ const App: React.FC<{}> = () => {
 
 const AppContainer = () => {
   return (
-    <SafeAreaProvider>
-      <ThemeProvider>
-        <GestureHandlerRootView>
-          <KeyboardProvider statusBarTranslucent>
-            <GestureDetectorProvider>
-              <PlayerProvider>
-                <OrientationProvider>
-                  <App />
-                  <PlayerGestureView />
-                </OrientationProvider>
-              </PlayerProvider>
-            </GestureDetectorProvider>
-          </KeyboardProvider>
-        </GestureHandlerRootView>
-      </ThemeProvider>
-    </SafeAreaProvider>
+    <Provider store={store}>
+      <SafeAreaProvider>
+        <ThemeProvider>
+          <GestureHandlerRootView>
+            <KeyboardProvider statusBarTranslucent>
+              <GestureDetectorProvider>
+                <PlayerProvider>
+                  <OrientationProvider>
+                    <App />
+                    <PlayerGestureView />
+                  </OrientationProvider>
+                </PlayerProvider>
+              </GestureDetectorProvider>
+            </KeyboardProvider>
+          </GestureHandlerRootView>
+        </ThemeProvider>
+      </SafeAreaProvider>
+    </Provider>
   )
 }
 

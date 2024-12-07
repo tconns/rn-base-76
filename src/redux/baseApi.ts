@@ -64,6 +64,11 @@ export const baseQueryWithReauth: (baseUrl: string) => BaseQueryFn<string | Fetc
 
           if (refreshResult.data && refreshResult?.data?.status === 0) {
             //   api.dispatch(tokenReceived(refreshResult.data))
+            const token = refreshResult.data?.data?.accessToken
+            AppInfoManager.setAccessToken(token)
+            AppInfoManager.setRefreshToken(refreshResult.data?.data?.refreshToken)
+            // AppInfoManager.setUserInfo(refreshResult.data?.data?.userInfo)
+            AppInfoManager.setClientId(refreshResult?.data?.data?.clientId)
             // thử lại câu truy vấn ban đầu
             result = await baseQuery(args, api, extraOptions)
           } else {
@@ -79,8 +84,8 @@ export const baseQueryWithReauth: (baseUrl: string) => BaseQueryFn<string | Fetc
         await mutex.waitForUnlock()
         result = await baseQuery(args, api, extraOptions)
       }
-
-      return result
     }
+
+    return result
   }
 }

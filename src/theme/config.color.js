@@ -45,7 +45,7 @@ const gradientColor = {
   secondary: ['#C58BF2', '#EEA4CE'],
 }
 
-const generateColorStyles = (commonColor) => {
+const generateColorStyles = (commonColor, lightColor, darkColor) => {
   const styles = {}
 
   Object.keys(commonColor).forEach((key) => {
@@ -56,11 +56,27 @@ const generateColorStyles = (commonColor) => {
     styles[`text-${key}`] = { color: value }
   })
 
+  // Object.keys(lightColor).forEach((key) => {
+  //   const value = lightColor[key]
+
+  //   // Border Radius
+  //   styles[`bg-light-${key}`] = { backgroundColor: value }
+  //   styles[`text-light-${key}`] = { color: value }
+  // })
+
+  // Object.keys(darkColor).forEach((key) => {
+  //   const value = darkColor[key]
+
+  //   // Border Radius
+  //   styles[`bg-dark-${key}`] = { backgroundColor: value }
+  //   styles[`text-dark-${key}`] = { color: value }
+  // })
+
   return styles
 }
 
 module.exports = {
-  commonColor: generateColorStyles(commonColor),
+  commonColor: generateColorStyles(commonColor, lightColor, darkColor),
   common: commonColor,
   lightColor,
   darkColor,

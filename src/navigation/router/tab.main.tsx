@@ -16,6 +16,8 @@ const TabScreen = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        freezeOnBlur: true,
+        lazy: true,
         headerShown: false,
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
