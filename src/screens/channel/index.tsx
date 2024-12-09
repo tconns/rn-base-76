@@ -45,7 +45,7 @@ const Screen: React.FC<IPropsScreen> = ({ route }) => {
           renderScene={renderScene}
           onIndexChange={setIndex}
           initialLayout={{ width: dimensions.screen.width }}
-          // mode="lazy"
+          mode="lazy"
           renderTabBar={(props) => {
             return (
               <TabBar

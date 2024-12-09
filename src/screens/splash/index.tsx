@@ -17,8 +17,6 @@ const Screen: React.FC<IPropsScreen> = ({ route }) => {
 
   const { commonColors } = useTheme()
 
-  console.log('getConfigQuery', getConfigQuery)
-
   useEffect(() => {
     if (getConfigQuery.data?.data) {
       requestAnimationFrame(() => {

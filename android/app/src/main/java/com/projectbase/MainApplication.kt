@@ -1,6 +1,7 @@
 package com.projectbase
 
 import android.app.Application
+import androidx.multidex.MultiDexApplication
 import com.facebook.react.PackageList
 import com.facebook.react.ReactApplication
 import com.facebook.react.ReactHost
@@ -14,7 +15,7 @@ import com.facebook.soloader.SoLoader
 import com.neoorientation.NeoOrientationActivityLifecycle
 import com.neoorientation.NeoOrientationPackage
 
-class MainApplication : Application(), ReactApplication {
+class MainApplication : MultiDexApplication(), ReactApplication {
 
   override val reactNativeHost: ReactNativeHost =
       object : DefaultReactNativeHost(this) {

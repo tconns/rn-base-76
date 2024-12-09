@@ -37,7 +37,7 @@ export const useCarouselSwipePanGesture = (
   const swipeEnabled = !isJumping && _swipeEnabled
 
   const swipePanGesture = Gesture.Pan()
-    .enabled(swipeEnabled)
+    .enabled(true)
     .activeOffsetX([-10, 10])
     .onStart(({ velocityY, velocityX }) => {
       panIsVertical.value = Math.abs(velocityY) > Math.abs(velocityX)

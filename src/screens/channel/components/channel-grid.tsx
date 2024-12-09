@@ -13,7 +13,7 @@ export const GridChannel: React.FC<{ channels: DetailChannelCatalog[] }> = ({ ch
 
   const renderItem = useCallback(
     ({ item }: { item: DetailChannelCatalog }) => {
-      const widthImage = itemWidth - spacing['sm-12']
+      const widthImage = itemWidth - spacing['sm-16']
       return (
         <View
           style={cn({
@@ -28,7 +28,7 @@ export const GridChannel: React.FC<{ channels: DetailChannelCatalog[] }> = ({ ch
           <View
             style={
               cn({
-                atomic: ['rounded-md', 'mb-sm-8', 'bg-gray1', 'justify-center', 'items-center'],
+                atomic: ['rounded-md', 'mb-sm-8', 'bg-gray4', 'justify-center', 'items-center'],
                 styles: [
                   {
                     width: itemWidth,
