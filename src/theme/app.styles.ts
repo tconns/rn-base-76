@@ -341,6 +341,15 @@ export const ApplicationStyle = StyleSheet.create({
 'my-sm-1': {
   "marginVertical": 1
 },
+'gap-sm-1': {
+  "gap": 1
+},
+'gap-x-sm-1': {
+  "columnGap": 1
+},
+'gap-y-sm-1': {
+  "rowGap": 1
+},
 'p-sm-2': {
   "padding": 2
 },
@@ -382,6 +391,15 @@ export const ApplicationStyle = StyleSheet.create({
 },
 'my-sm-2': {
   "marginVertical": 2
+},
+'gap-sm-2': {
+  "gap": 2
+},
+'gap-x-sm-2': {
+  "columnGap": 2
+},
+'gap-y-sm-2': {
+  "rowGap": 2
 },
 'p-sm-4': {
   "padding": 4
@@ -425,6 +443,15 @@ export const ApplicationStyle = StyleSheet.create({
 'my-sm-4': {
   "marginVertical": 4
 },
+'gap-sm-4': {
+  "gap": 4
+},
+'gap-x-sm-4': {
+  "columnGap": 4
+},
+'gap-y-sm-4': {
+  "rowGap": 4
+},
 'p-sm-6': {
   "padding": 6
 },
@@ -466,6 +493,15 @@ export const ApplicationStyle = StyleSheet.create({
 },
 'my-sm-6': {
   "marginVertical": 6
+},
+'gap-sm-6': {
+  "gap": 6
+},
+'gap-x-sm-6': {
+  "columnGap": 6
+},
+'gap-y-sm-6': {
+  "rowGap": 6
 },
 'p-sm-8': {
   "padding": 8
@@ -509,6 +545,15 @@ export const ApplicationStyle = StyleSheet.create({
 'my-sm-8': {
   "marginVertical": 8
 },
+'gap-sm-8': {
+  "gap": 8
+},
+'gap-x-sm-8': {
+  "columnGap": 8
+},
+'gap-y-sm-8': {
+  "rowGap": 8
+},
 'p-sm-12': {
   "padding": 12
 },
@@ -550,6 +595,15 @@ export const ApplicationStyle = StyleSheet.create({
 },
 'my-sm-12': {
   "marginVertical": 12
+},
+'gap-sm-12': {
+  "gap": 12
+},
+'gap-x-sm-12': {
+  "columnGap": 12
+},
+'gap-y-sm-12': {
+  "rowGap": 12
 },
 'p-sm-16': {
   "padding": 16
@@ -593,6 +647,15 @@ export const ApplicationStyle = StyleSheet.create({
 'my-sm-16': {
   "marginVertical": 16
 },
+'gap-sm-16': {
+  "gap": 16
+},
+'gap-x-sm-16': {
+  "columnGap": 16
+},
+'gap-y-sm-16': {
+  "rowGap": 16
+},
 'p-md-24': {
   "padding": 24
 },
@@ -634,6 +697,15 @@ export const ApplicationStyle = StyleSheet.create({
 },
 'my-md-24': {
   "marginVertical": 24
+},
+'gap-md-24': {
+  "gap": 24
+},
+'gap-x-md-24': {
+  "columnGap": 24
+},
+'gap-y-md-24': {
+  "rowGap": 24
 },
 'p-md-32': {
   "padding": 32
@@ -677,6 +749,15 @@ export const ApplicationStyle = StyleSheet.create({
 'my-md-32': {
   "marginVertical": 32
 },
+'gap-md-32': {
+  "gap": 32
+},
+'gap-x-md-32': {
+  "columnGap": 32
+},
+'gap-y-md-32': {
+  "rowGap": 32
+},
 'p-md-40': {
   "padding": 40
 },
@@ -718,6 +799,15 @@ export const ApplicationStyle = StyleSheet.create({
 },
 'my-md-40': {
   "marginVertical": 40
+},
+'gap-md-40': {
+  "gap": 40
+},
+'gap-x-md-40': {
+  "columnGap": 40
+},
+'gap-y-md-40': {
+  "rowGap": 40
 },
 'p-md-48': {
   "padding": 48
@@ -761,6 +851,15 @@ export const ApplicationStyle = StyleSheet.create({
 'my-md-48': {
   "marginVertical": 48
 },
+'gap-md-48': {
+  "gap": 48
+},
+'gap-x-md-48': {
+  "columnGap": 48
+},
+'gap-y-md-48': {
+  "rowGap": 48
+},
 'p-md-56': {
   "padding": 56
 },
@@ -802,6 +901,15 @@ export const ApplicationStyle = StyleSheet.create({
 },
 'my-md-56': {
   "marginVertical": 56
+},
+'gap-md-56': {
+  "gap": 56
+},
+'gap-x-md-56': {
+  "columnGap": 56
+},
+'gap-y-md-56': {
+  "rowGap": 56
 },
 'p-md-64': {
   "padding": 64
@@ -845,6 +953,15 @@ export const ApplicationStyle = StyleSheet.create({
 'my-md-64': {
   "marginVertical": 64
 },
+'gap-md-64': {
+  "gap": 64
+},
+'gap-x-md-64': {
+  "columnGap": 64
+},
+'gap-y-md-64': {
+  "rowGap": 64
+},
 'p-md-72': {
   "padding": 72
 },
@@ -886,6 +1003,15 @@ export const ApplicationStyle = StyleSheet.create({
 },
 'my-md-72': {
   "marginVertical": 72
+},
+'gap-md-72': {
+  "gap": 72
+},
+'gap-x-md-72': {
+  "columnGap": 72
+},
+'gap-y-md-72': {
+  "rowGap": 72
 },
 'p-md-80': {
   "padding": 80
@@ -929,6 +1055,15 @@ export const ApplicationStyle = StyleSheet.create({
 'my-md-80': {
   "marginVertical": 80
 },
+'gap-md-80': {
+  "gap": 80
+},
+'gap-x-md-80': {
+  "columnGap": 80
+},
+'gap-y-md-80': {
+  "rowGap": 80
+},
 'p-md-88': {
   "padding": 88
 },
@@ -970,6 +1105,15 @@ export const ApplicationStyle = StyleSheet.create({
 },
 'my-md-88': {
   "marginVertical": 88
+},
+'gap-md-88': {
+  "gap": 88
+},
+'gap-x-md-88': {
+  "columnGap": 88
+},
+'gap-y-md-88': {
+  "rowGap": 88
 },
 'p-lg-96': {
   "padding": 96
@@ -1013,6 +1157,15 @@ export const ApplicationStyle = StyleSheet.create({
 'my-lg-96': {
   "marginVertical": 96
 },
+'gap-lg-96': {
+  "gap": 96
+},
+'gap-x-lg-96': {
+  "columnGap": 96
+},
+'gap-y-lg-96': {
+  "rowGap": 96
+},
 'p-lg-104': {
   "padding": 104
 },
@@ -1054,6 +1207,15 @@ export const ApplicationStyle = StyleSheet.create({
 },
 'my-lg-104': {
   "marginVertical": 104
+},
+'gap-lg-104': {
+  "gap": 104
+},
+'gap-x-lg-104': {
+  "columnGap": 104
+},
+'gap-y-lg-104': {
+  "rowGap": 104
 },
 'p-lg-112': {
   "padding": 112
@@ -1097,6 +1259,15 @@ export const ApplicationStyle = StyleSheet.create({
 'my-lg-112': {
   "marginVertical": 112
 },
+'gap-lg-112': {
+  "gap": 112
+},
+'gap-x-lg-112': {
+  "columnGap": 112
+},
+'gap-y-lg-112': {
+  "rowGap": 112
+},
 'p-lg-120': {
   "padding": 120
 },
@@ -1139,6 +1310,15 @@ export const ApplicationStyle = StyleSheet.create({
 'my-lg-120': {
   "marginVertical": 120
 },
+'gap-lg-120': {
+  "gap": 120
+},
+'gap-x-lg-120': {
+  "columnGap": 120
+},
+'gap-y-lg-120': {
+  "rowGap": 120
+},
 'p-lg-128': {
   "padding": 128
 },
@@ -1180,6 +1360,15 @@ export const ApplicationStyle = StyleSheet.create({
 },
 'my-lg-128': {
   "marginVertical": 128
+},
+'gap-lg-128': {
+  "gap": 128
+},
+'gap-x-lg-128': {
+  "columnGap": 128
+},
+'gap-y-lg-128': {
+  "rowGap": 128
 },
 'rounded-none': {
   "borderRadius": 0

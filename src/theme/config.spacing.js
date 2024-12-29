@@ -45,6 +45,11 @@ const generateSpacingStyles = (spacing) => {
     styles[`ml-${key}`] = { marginLeft: value };
     styles[`mx-${key}`] = { marginHorizontal: value };
     styles[`my-${key}`] = { marginVertical: value };
+  
+    //Gap
+    styles[`gap-${key}`] = { gap: value };
+    styles[`gap-x-${key}`] = { columnGap: value };
+    styles[`gap-y-${key}`] = { rowGap: value };
   });
 
   return styles;
