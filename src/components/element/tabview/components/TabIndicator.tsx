@@ -5,13 +5,15 @@ import type { TabIndicatorProps } from '../types/TabIndicator'
 import { useTabLayoutContext } from '../providers/TabLayout'
 
 const TabIndicator = (props: TabIndicatorProps) => {
-  const { type, animatedRouteIndex, style } = props
+  const { type, animatedRouteIndex, style, allPositions } = props
 
   const { routeIndexToTabWidthMap, routeIndexToTabOffsetMap, routeIndexToTabBarItemWidthMap } = useTabLayoutContext()
 
   const animatedTabIndicatorStyle = useAnimatedStyle(() => {
     const animatedRouteIndexFloor = Math.floor(animatedRouteIndex.value)
     const animatedRouteIndexCeil = animatedRouteIndexFloor + 1
+
+    // console.log(" routeIndexToTabOffsetMap.value[animatedRouteIndexFloor]",  routeIndexToTabOffsetMap.value[animatedRouteIndexFloor])
 
     const translateXFloor =
       type === 'primary'
