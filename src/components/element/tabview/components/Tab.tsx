@@ -9,9 +9,10 @@ type TabProps = {
   noOfRoutes: number
   style?: StyleProp<ViewStyle>
   children?: any
+  onLayout: (event: any) => void
 }
-const Tab: React.FC<TabProps> = ({ index, noOfRoutes, style, children }) => {
-  const { handleTabLayout } = useHandleTabLayout(index, noOfRoutes)
+const Tab: React.FC<TabProps> = ({ index, noOfRoutes, style, children, onLayout }) => {
+  const { handleTabLayout } = useHandleTabLayout(index, noOfRoutes, onLayout)
 
   return (
     <View

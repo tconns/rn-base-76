@@ -1,80 +1,66 @@
-import type { FlatList } from 'react-native-gesture-handler';
-import type { Layout } from '../types/common';
-import { useCallback, type RefObject } from 'react';
-import { useStateUpdatesListener } from './useStateUpdatesListener';
-import { useTabLayoutContext } from '../providers/TabLayout';
+import type { FlatList } from 'react-native-gesture-handler'
+import { useCallback, type RefObject } from 'react'
+import { useStateUpdatesListener } from './useStateUpdatesListener'
+import { DataTransform } from '../helpers/transform.style'
+import Animated from 'react-native-reanimated'
 
 type AutoScrollToRouteIndexParams = {
-  shouldScrollToIndex: boolean;
-  animated: boolean;
-};
+  shouldScrollToIndex: boolean
+  animated: boolean
+}
 
 export const useTabBarAutoScroll = (
   flatListRef: RefObject<FlatList>,
   currentRouteIndex: number,
-  layout: Layout
+  allPositions: DataTransform[],
+  scrollViewRef: RefObject<Animated.ScrollView>,
 ) => {
-  const { routeIndexToTabWidthMap, routeIndexToTabOffsetMap } =
-    useTabLayoutContext();
-
   const autoScrollToRouteIndex = useCallback(
     (routeIndex: number, params?: Partial<AutoScrollToRouteIndexParams>) => {
       const { animated, shouldScrollToIndex } = {
         animated: true,
         shouldScrollToIndex: false,
         ...params,
-      };
-      if (shouldScrollToIndex) {
-        const width = routeIndexToTabWidthMap.value[routeIndex] ?? 0;
-        const viewOffset = layout.width / 2 - width / 2;
-        flatListRef.current?.scrollToIndex({
-          index: routeIndex,
-          viewOffset,
-          animated,
-        });
-      } else {
-        let offset = routeIndexToTabOffsetMap.value[routeIndex] ?? 0;
-        const width = routeIndexToTabWidthMap.value[routeIndex] ?? 0;
-        offset -= layout.width / 2 - width / 2;
-        flatListRef.current?.scrollToOffset({
-          offset,
-          animated,
-        });
       }
+      const dataPos = allPositions[routeIndex]
+
+      const offset = !dataPos ? 0 : dataPos.start + dataPos.size / 2 - dataPos.width / 2
+
+      // flatListRef.current?.scrollToOffset({
+      //   offset,
+      //   animated,
+      // })
+      scrollViewRef.current?.scrollTo?.({
+        x: offset,
+        animated,
+      })
     },
-    [
-      flatListRef,
-      layout.width,
-      routeIndexToTabOffsetMap.value,
-      routeIndexToTabWidthMap.value,
-    ]
-  );
+    [flatListRef, allPositions, scrollViewRef],
+  )
 
   useStateUpdatesListener(
     currentRouteIndex,
     useCallback(() => {
-      setTimeout(() => {
-        autoScrollToRouteIndex(currentRouteIndex);
-      }, 500);
-    }, [autoScrollToRouteIndex, currentRouteIndex])
-  );
+      // setTimeout(() => {
+      autoScrollToRouteIndex(currentRouteIndex)
+      // }, 500)
+    }, [autoScrollToRouteIndex, currentRouteIndex]),
+  )
 
   const handleScrollToIndexFailed = useCallback(
     ({ index: routeIndex }: { index: number }) => {
-      let offset = routeIndexToTabOffsetMap.value[routeIndex] ?? 0;
-      const width = routeIndexToTabWidthMap.value[routeIndex] ?? 0;
-      offset -= layout.width / 2 + width / 2;
-      flatListRef.current?.scrollToOffset({
-        offset,
-      });
-    },
-    [
-      flatListRef,
-      layout.width,
-      routeIndexToTabOffsetMap,
-      routeIndexToTabWidthMap,
-    ]
-  );
+      const dataPos = allPositions[routeIndex]
+      const offset = !dataPos ? 0 : dataPos.start + dataPos.size / 2 - dataPos.width / 2
 
-  return { autoScrollToRouteIndex, handleScrollToIndexFailed };
-};
+      // flatListRef.current?.scrollToOffset({
+      //   offset,
+      // })
+      scrollViewRef.current?.scrollTo?.({
+        x: offset,
+      })
+    },
+    [allPositions, flatListRef, scrollViewRef],
+  )
+
+  return { autoScrollToRouteIndex, handleScrollToIndexFailed }
+}
