@@ -7074,6 +7074,11 @@ react-native-video@^6.8.2:
   resolved "https://registry.yarnpkg.com/react-native-video/-/react-native-video-6.8.2.tgz#3c53524b9f74591b5e6d7964e7aa2e9f0328a95d"
   integrity sha512-lAf6pa/eqksaQnZ+rx9XWx9HpfNt0xr/XmSXMASynJJ8EqMJTr8gHJe4Wfkebo5W8qAMKRuHYtZs+4Shzl3IIQ==
 
+react-native-worker-timer@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-worker-timer/-/react-native-worker-timer-0.1.0.tgz#aa53864fc391fa5dd2670b687905a3ad5d668afe"
+  integrity sha512-dYs7cZtTccw28+qqb51kW/1S/VjHtLxKcDCN9hsJDFcZHiRcMj2+AiPz+0m8xo+4YzkCjAiTGcff+9ueLSYq4g==
+
 react-native@0.76.3:
   version "0.76.3"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.76.3.tgz#18b79949c58932e9fd8d04b205e5c0a46bc46d8f"

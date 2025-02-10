@@ -38,7 +38,7 @@ export const useCarouselSwipePanGesture = (
 
   const swipePanGesture = Gesture.Pan()
     .enabled(true)
-    .activeOffsetX([-10, 10])
+    .activeOffsetX([-5, 5])
     .onStart(({ velocityY, velocityX }) => {
       panIsVertical.value = Math.abs(velocityY) > Math.abs(velocityX)
       preSwipeStartSwipeTranslationX.value = swipeTranslationX.value
